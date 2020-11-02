@@ -3,6 +3,7 @@ from sqlalchemy import (
     Column, Integer, String, ForeignKey, Float, create_engine
 )
 
+# The Base class is where all table classes inherit from
 Base = declarative_base()
 
 

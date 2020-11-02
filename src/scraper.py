@@ -2,6 +2,10 @@ import requests
 
 
 class Weekly:
+    """
+    This class just makes the data a bit more orderly.
+    """
+
     def __init__(self, athlete_id, first_name, last_name, distance,
                  activity_count, best_distance, best_moving_time, total_time,
                  velocity):
@@ -16,7 +20,8 @@ class Weekly:
         self.velocity = velocity
 
     @property
-    def valid(self):
+    def valid(self):  # Currently not in use, designed to filter out fake runs,
+        # e.g. using a bycicle
         return not (self.distance / self.activity_count > 2 and
                     self.velocity < 2)
 
@@ -35,9 +40,12 @@ class Weekly:
         )
 
 
+# These are (as far as I know) the minimum headers required to get the json
+# data
 headers = {
     "Referer": "Referer: https://www.strava.com/clubs/623637/leaderboard",
-    "Accept": "text/javascript, application/javascript, application/ecmascript, application/x-ecmascript",
+    "Accept": "text/javascript, application/javascript, "
+    "application/ecmascript, application/x-ecmascript",
     "Host": "www.strava.com",
     "X-Requested-With": "XMLHttpRequest",
 }
