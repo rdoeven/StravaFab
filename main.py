@@ -14,8 +14,7 @@ def add_to_db(session, weekly, year, week):
 
     # Query the db for the user
     result = session.query(Person.id).filter_by(
-        first_name=weekly.first_name,
-        last_name=weekly.last_name
+        id=weekly.athlete_id
     ).first()
 
     if not result:  # this means the user hasn't been added to the system yet
@@ -64,17 +63,17 @@ def add_users(session):
     """
 
     with open("data/users.csv", "r") as csv_file:
-        reader = csv.reader(csv_file)
+        reader = csv.reader(csv_file, delimiter = ";")
 
         for first_name, last_name, room, athlete_id in reader:
-            user = session.query(Person.id).filter_by(id=athlete_id).first()
+            user = session.query(Person.id).filter_by(id=int(athlete_id)).first()
 
             if not user:
                 user = Person(
-                    id=athlete_id,
+                    id=int(athlete_id),
                     first_name=first_name,
                     last_name=last_name,
-                    room_number=room
+                    room_number=int(room)
                 )
 
                 session.add(user)
