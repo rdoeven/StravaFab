@@ -12,9 +12,9 @@ Het script is momnteel aangepast om te weken met de dynamiek voor de fabiola, ma
 * voer main.py uit met python3
 
 ## filestructure
-`data/` : hierin moet users.csv gestoken worden en wordt de databank in opgeslagen.
-`main.py` : hierin zit alle code die de parts aan elkaar hecht en zit ook de grootste functionaliteit in geprogrammeerd
-`src/` : hierin zit `scraper.py` met de functies om de data van strava te scrapen en `models.py` die specificaties van de databank vastleggen. 
+* `data/` : hierin moet users.csv gestoken worden en wordt de databank in opgeslagen.
+* `main.py` : hierin zit alle code die de parts aan elkaar hecht en zit ook de grootste functionaliteit in geprogrammeerd
+* `src/` : hierin zit `scraper.py` met de functies om de data van strava te scrapen en `models.py` die specificaties van de databank vastleggen. 
 
 ## costum instellingen
 ### andere groep
