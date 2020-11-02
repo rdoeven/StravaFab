@@ -1,0 +1,5 @@
+venv/
+.vim/
+Makefile
+__pycache__/
+data/
